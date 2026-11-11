@@ -1,0 +1,22 @@
+# harness 全局设置
+
+# 当前专精领域，对应 niches/ 下的文件夹名。用 /niche 切换。
+active_niche = "北美职场"
+
+# 发布模式："B" = 只生成，你用手机手动发（新号默认）；"A" = 你批准后由 harness 自动发
+publish_mode = "B"
+
+# 每天最多发布几篇（风控检查会拦截超出的）
+daily_post_limit = 2
+
+# 两次发布之间至少间隔多少小时
+min_hours_between_posts = 4
+
+[limits]
+title_max_chars = 20
+body_max_chars = 1000
+tags_max = 10
+
+[cards]
+width = 1080
+height = 1440
