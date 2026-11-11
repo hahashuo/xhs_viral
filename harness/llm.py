@@ -10,7 +10,8 @@ import re
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 
-from .config import RISK_DIR, ROOT, Niche, load_settings
+from . import config
+from .config import Niche, load_settings
 from .draft import FINAL_SCHEMA_HINT
 
 
@@ -44,12 +45,13 @@ def load_env() -> None:
         from dotenv import load_dotenv
     except ImportError:
         return
-    load_dotenv(ROOT / ".env")
+    load_dotenv(config.ROOT / ".env")
 
 
 def build_messages(niche: Niche, idea: str, brief: str = "") -> list[dict]:
     limits = load_settings()["limits"]
-    banned = (RISK_DIR / "banned_words.txt").read_text(encoding="utf-8") if (RISK_DIR / "banned_words.txt").exists() else ""
+    banned_path = config.RISK_DIR / "banned_words.txt"
+    banned = banned_path.read_text(encoding="utf-8") if banned_path.exists() else ""
     system = f"""你是一位小红书「{niche.name}」领域的资深创作者，按下面的领域配置写笔记。
 
 {niche.as_prompt_context()}

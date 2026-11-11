@@ -5,7 +5,8 @@ import html
 import os
 from pathlib import Path
 
-from .config import TEMPLATES_DIR, Niche, load_settings
+from . import config
+from .config import Niche, load_settings
 
 
 def card_html(template: str, niche_name: str, card: dict, page: str, size: dict) -> str:
@@ -26,7 +27,7 @@ def render_cards(final: dict, niche: Niche, draft_dir: Path) -> list[Path]:
     size = load_settings()["cards"]
     tpl_path = niche.path / "templates" / "card.html"
     if not tpl_path.exists():
-        tpl_path = TEMPLATES_DIR / "card.html"
+        tpl_path = config.TEMPLATES_DIR / "card.html"
     template = tpl_path.read_text(encoding="utf-8")
 
     out_dir = draft_dir / "cards"

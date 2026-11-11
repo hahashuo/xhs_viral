@@ -57,6 +57,24 @@
 
 注意：同一账号不能同时在电脑网页端登录，否则自动发布会掉线。
 
+## 测试
+
+```powershell
+python -m unittest discover -s tests -t . -v
+```
+
+- 单元测试不需要任何 API key，不联网，在临时目录里运行，不会动你的 `drafts/` 和 `state/`。
+- 卡片渲染测试需要 `python -m playwright install chromium`，没装会自动跳过。
+- 真实接口测试默认跳过。要跑的话，先在 `.env` 填好 key，再执行：
+
+  ```powershell
+  $env:RUN_LIVE_TESTS = "1"
+  python -m unittest tests.test_live_llm -v
+  ```
+
+  会各调用 DeepSeek 和豆包一次，产生少量费用。
+- GitHub Actions 会在 Ubuntu 和 Windows 上自动跑单元测试。
+
 ## 目录
 
 ```

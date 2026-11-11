@@ -67,7 +67,7 @@ def read_published() -> list[dict]:
 
 
 def append_published(record: dict) -> None:
-    STATE_DIR.mkdir(exist_ok=True)
+    PUBLISHED_LOG.parent.mkdir(parents=True, exist_ok=True)
     record = {"published_at": datetime.now(timezone.utc).isoformat(), **record}
     with open(PUBLISHED_LOG, "a", encoding="utf-8") as f:
         f.write(json.dumps(record, ensure_ascii=False) + "\n")

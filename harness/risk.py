@@ -9,7 +9,8 @@ import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from .config import RISK_DIR, Niche, load_settings, read_published
+from . import config
+from .config import Niche, load_settings, read_published
 
 # 联系方式和引流的常见写法
 CONTACT_PATTERNS = [
@@ -26,14 +27,20 @@ AI_DISCLOSURE_TAGS = {"AI创作", "AI辅助创作"}
 
 def load_banned_words(niche: Niche | None = None) -> list[str]:
     words: list[str] = []
-    sources = [RISK_DIR / "banned_words.txt"]
+    sources = [config.RISK_DIR / "banned_words.txt"]
     if niche is not None:
         sources.append(niche.path / "banned.md")
     for src in sources:
         if not src.exists():
             continue
+        is_md = src.suffix == ".md"
         for line in src.read_text(encoding="utf-8").splitlines():
-            line = line.strip().lstrip("-").strip()
+            line = line.strip()
+            if is_md:
+                # Markdown 文件只认列表项（- 词），说明文字不算
+                if not line.startswith("- "):
+                    continue
+                line = line[2:].strip()
             if line and not line.startswith("#"):
                 words.append(line)
     return words

@@ -14,7 +14,7 @@ import re
 from datetime import datetime
 from pathlib import Path
 
-from .config import DRAFTS_DIR
+from . import config
 
 FINAL_SCHEMA_HINT = {
     "title": "标题，≤20 字",
@@ -40,7 +40,7 @@ def slugify(text: str, max_len: int = 16) -> str:
 
 def new_draft_dir(idea: str) -> Path:
     stamp = datetime.now().strftime("%Y%m%d-%H%M")
-    path = DRAFTS_DIR / f"{stamp}-{slugify(idea)}"
+    path = config.DRAFTS_DIR / f"{stamp}-{slugify(idea)}"
     (path / "variants").mkdir(parents=True, exist_ok=True)
     (path / "idea.md").write_text(idea.strip() + "\n", encoding="utf-8")
     return path
@@ -51,11 +51,12 @@ def resolve_draft(arg: str | None) -> Path:
     if arg:
         p = Path(arg)
         if not p.is_absolute() and not p.exists():
-            p = DRAFTS_DIR / arg
+            p = config.DRAFTS_DIR / arg
         if not p.is_dir():
             raise SystemExit(f"找不到草稿：{arg}")
         return p
-    drafts = sorted((d for d in DRAFTS_DIR.iterdir() if d.is_dir()), key=lambda d: d.name)
+    drafts_dir = config.DRAFTS_DIR
+    drafts = sorted((d for d in drafts_dir.iterdir() if d.is_dir()), key=lambda d: d.name) if drafts_dir.exists() else []
     if not drafts:
         raise SystemExit("还没有草稿。先用 /idea 生成一篇。")
     return drafts[-1]
