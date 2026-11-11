@@ -1,0 +1,1088 @@
+{
+  "task": "确定性风控引擎 harness/risk.py 对各种写法的拦截能力（不需要 API key）",
+  "cases": [
+    {
+      "id": "engine-clean",
+      "desc": "干净的稿子不应被拦",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": false
+        }
+      ]
+    },
+    {
+      "id": "engine-cn-phone",
+      "desc": "国内手机号",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\n13812345678",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true,
+          "rules": [
+            "引流"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engine-na-phone",
+      "desc": "北美电话",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\n(415) 555-0123",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true,
+          "rules": [
+            "引流"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engine-email",
+      "desc": "邮箱",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\ncareer@example.com",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true,
+          "rules": [
+            "引流"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engine-url",
+      "desc": "站外链接",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\nhttps://example.com",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true,
+          "rules": [
+            "引流"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engine-vx-id",
+      "desc": "vx 加号码",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\nvx: career2026",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true
+        }
+      ]
+    },
+    {
+      "id": "engine-comment-bait",
+      "desc": "评论区扣 1",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\n评论区 扣 1 发你",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true,
+          "rules": [
+            "引流"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engine-banned-niche",
+      "desc": "领域禁词 内推收费",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\n内推收费 200 刀",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true,
+          "rules": [
+            "敏感词"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engine-title-long",
+      "desc": "标题 21 字",
+      "input": {
+        "final": {
+          "title": "一一一一一一一一一一一一一一一一一一一一一",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true,
+          "rules": [
+            "标题长度"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engine-mode-a-no-ai-tag",
+      "desc": "模式 A 缺 AI 标注标签",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "A"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true,
+          "rules": [
+            "AI 标注"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engine-mode-a-ai-tag",
+      "desc": "模式 A 有 AI 标注标签",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。",
+          "tags": [
+            "北美职场",
+            "AI辅助创作"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "A"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": false
+        }
+      ]
+    },
+    {
+      "id": "engine-web-image",
+      "desc": "图片来源是网图",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "x.jpg",
+              "source": "web"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true,
+          "rules": [
+            "图片来源"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engine-duplicate-title",
+      "desc": "和已发标题几乎一样",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true,
+          "rules": [
+            "重复内容"
+          ]
+        }
+      ],
+      "published": [
+        {
+          "title": "被裁第二天我做对了3件事！",
+          "hours_ago": 200
+        }
+      ]
+    },
+    {
+      "id": "engine-daily-limit",
+      "desc": "24 小时内已发 2 篇",
+      "input": {
+        "final": {
+          "title": "谈薪别只看base",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true,
+          "rules": [
+            "发布频率"
+          ]
+        }
+      ],
+      "published": [
+        {
+          "title": "a",
+          "hours_ago": 20
+        },
+        {
+          "title": "b",
+          "hours_ago": 10
+        }
+      ]
+    },
+    {
+      "id": "engine-salary-numbers",
+      "desc": "薪资数字不是电话",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\nbase 从 150k 谈到 175k，sign-on 30k，面试 10:30-11:30",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": false
+        }
+      ]
+    },
+    {
+      "id": "gap-v-heart",
+      "desc": "V❤ 变体",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\nV❤：career2026",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true
+        }
+      ],
+      "known_gap": true
+    },
+    {
+      "id": "gap-add-v",
+      "desc": "加V详聊",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\n加V详聊",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true
+        }
+      ],
+      "known_gap": true
+    },
+    {
+      "id": "gap-split-char",
+      "desc": "拆字 薇❤信",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\n薇❤信 career2026",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true
+        }
+      ],
+      "known_gap": true
+    },
+    {
+      "id": "gap-fullwidth-phone",
+      "desc": "全角数字手机号",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\n１３８１２３４５６７８",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true
+        }
+      ],
+      "known_gap": true
+    },
+    {
+      "id": "gap-wx-hao",
+      "desc": "WX号 加号码",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\nWX号 abc12345",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true
+        }
+      ],
+      "known_gap": true
+    },
+    {
+      "id": "gap-dd-me",
+      "desc": "dd我（私信黑话）",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\n要模板的 dd我",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true
+        }
+      ],
+      "known_gap": true
+    },
+    {
+      "id": "gap-green-app",
+      "desc": "绿色软件暗示微信",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\n绿色软件搜 career_abc",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true
+        }
+      ],
+      "known_gap": true
+    },
+    {
+      "id": "gap-obfuscated-email",
+      "desc": "(at) 邮箱",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\ncareer.abc(at)gmail.com",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": true
+        }
+      ],
+      "known_gap": true
+    },
+    {
+      "id": "gap-fp-100-remote",
+      "desc": "误拦：100% remote 是正常说法",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\n100% remote 的岗位越来越少",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": false
+        }
+      ],
+      "known_gap": true
+    },
+    {
+      "id": "gap-fp-private-chat",
+      "desc": "误拦：和老板私聊是职场正常场景",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\n跟 manager 私聊时先说结论",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B"
+      },
+      "graders": [
+        {
+          "type": "engine_expect",
+          "blocked": false
+        }
+      ],
+      "known_gap": true
+    }
+  ]
+}

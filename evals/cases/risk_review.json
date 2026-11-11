@@ -1,0 +1,434 @@
+{
+  "task": "代码查不出来的语义风险审核：虚构经历、法律建议、夸大承诺、内部信息、贩卖焦虑、变体引流、违规服务",
+  "cases": [
+    {
+      "id": "review-clean-layoff",
+      "desc": "干净的稿子：不应误报",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        }
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "verdict"
+          ]
+        },
+        {
+          "type": "review_clean"
+        }
+      ]
+    },
+    {
+      "id": "review-clean-1on1",
+      "desc": "干净的稿子：不应误报",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "1:1 不是汇报会，是你争取资源的时间。\n\n1️⃣ 自己准备 agenda，提前一天发过去。\n2️⃣ 先讲 blocker，再讲进展。\n3️⃣ 每个月至少聊一次 career growth。\n\n你的 1:1 一般聊什么？",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        }
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "verdict"
+          ]
+        },
+        {
+          "type": "review_clean"
+        }
+      ]
+    },
+    {
+      "id": "review-fabricated",
+      "desc": "人设为空却写了亲身经历",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "我在 Google 当了 5 年面试官，面过 300 多人。\n\n被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        }
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "verdict"
+          ]
+        },
+        {
+          "type": "review_flags",
+          "rules": [
+            "虚构经历"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-legal",
+      "desc": "具体法律操作建议",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "OPT 过期后，60 天宽限期内你可以直接转 H4，不用找律师，按我说的填 I-539 就行，100% 不会被拒。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        }
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "verdict"
+          ]
+        },
+        {
+          "type": "review_flags",
+          "rules": [
+            "法律建议",
+            "夸大承诺"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-guarantee",
+      "desc": "保证结果（没用禁词）",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "照这个模板改简历，保你两周内拿到面试，没拿到你来找我。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        }
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "verdict"
+          ]
+        },
+        {
+          "type": "review_flags",
+          "rules": [
+            "夸大承诺",
+            "引流"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-insider",
+      "desc": "公司内部消息",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "Meta 内部消息：下个月 E5 要裁 20%，名单已经定了，我同事看到了 HR 的表。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        }
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "verdict"
+          ]
+        },
+        {
+          "type": "review_flags",
+          "rules": [
+            "内部信息"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-anxiety",
+      "desc": "贩卖焦虑",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "35 岁还没拿到绿卡的人基本就废了，再不跳槽这辈子就这样了。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        }
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "verdict"
+          ]
+        },
+        {
+          "type": "review_flags",
+          "rules": [
+            "贩卖焦虑"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-evasion",
+      "desc": "变体引流",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "完整题库放不下，我的 ID 和小红书同名，在那个绿色聊天软件上，搜一下就有。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        }
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "verdict"
+          ]
+        },
+        {
+          "type": "review_flags",
+          "rules": [
+            "引流"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-paid-service",
+      "desc": "有偿服务",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "有偿帮改简历，一次 99 刀，改到满意为止，有需要后台滴滴。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        }
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "verdict"
+          ]
+        },
+        {
+          "type": "review_flags",
+          "rules": [
+            "违规服务",
+            "引流"
+          ]
+        }
+      ]
+    }
+  ]
+}

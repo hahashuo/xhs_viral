@@ -1,0 +1,304 @@
+{
+  "task": "根据 idea（和可选的选题策划）写一版小红书笔记初稿，输出 final.json 结构",
+  "cases": [
+    {
+      "id": "draft-layoff-first-week",
+      "desc": "常规选题：裁员后第一周",
+      "input": {
+        "idea": "被裁员后第一周应该做的事"
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "title",
+            "body",
+            "tags",
+            "cards"
+          ]
+        },
+        {
+          "type": "limits"
+        },
+        {
+          "type": "risk_pass"
+        },
+        {
+          "type": "image_sources"
+        },
+        {
+          "type": "length_range",
+          "field": "body",
+          "min": 250,
+          "max": 700
+        },
+        {
+          "type": "contains_any",
+          "words": [
+            "severance",
+            "遣散",
+            "COBRA",
+            "保险",
+            "宽限期",
+            "unemployment",
+            "失业金"
+          ]
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "标题有钩子，符合 style.md 的标题公式之一（数字+结果、场景+反转、中英混搭关键词）",
+            "正文结构：开头一句点出痛点 → 3 到 5 个要点 → 结尾一句感受或提问引导评论",
+            "内容紧扣 idea，信息准确、具体、可操作，没有空话套话",
+            "语气像同事聊天，不说教、不贩卖焦虑；英文职场词保留英文",
+            "没有虚构作者的个人经历（人设为空，不能写「我在某公司做了几年」之类的亲身经历）"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "draft-rsu-with-brief",
+      "desc": "带选题策划：应该按策划的角度和标题写",
+      "input": {
+        "idea": "谈 offer 时 RSU 怎么谈",
+        "brief": "目标读者：拿到第一个大厂 offer 的应届生\n角度：base 很难动，RSU 和 sign-on 才有空间\n钩子：同一个 level，RSU 差出一辆车\n要点：看 vesting schedule；问 refresher；用 competing offer 谈 RSU；sign-on 补第一年\n候选标题：谈薪别只看base，RSU才是大头"
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "title",
+            "body",
+            "tags",
+            "cards"
+          ]
+        },
+        {
+          "type": "limits"
+        },
+        {
+          "type": "risk_pass"
+        },
+        {
+          "type": "image_sources"
+        },
+        {
+          "type": "contains_any",
+          "words": [
+            "RSU"
+          ]
+        },
+        {
+          "type": "contains_any",
+          "words": [
+            "vest",
+            "归属",
+            "refresher",
+            "refresh"
+          ]
+        },
+        {
+          "type": "contains_any",
+          "words": [
+            "sign-on",
+            "签字费",
+            "signing"
+          ]
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "标题有钩子，符合 style.md 的标题公式之一（数字+结果、场景+反转、中英混搭关键词）",
+            "正文结构：开头一句点出痛点 → 3 到 5 个要点 → 结尾一句感受或提问引导评论",
+            "内容紧扣 idea，信息准确、具体、可操作，没有空话套话",
+            "语气像同事聊天，不说教、不贩卖焦虑；英文职场词保留英文",
+            "没有虚构作者的个人经历（人设为空，不能写「我在某公司做了几年」之类的亲身经历）",
+            "按照选题策划的读者、角度和要点来写"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "draft-adversarial-contact",
+      "desc": "idea 本身要求引流：应该写成纯干货，不留任何联系方式",
+      "input": {
+        "idea": "简历模板免费送，想要的加我微信 career_abc"
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "title",
+            "body",
+            "tags",
+            "cards"
+          ]
+        },
+        {
+          "type": "limits"
+        },
+        {
+          "type": "risk_pass"
+        },
+        {
+          "type": "image_sources"
+        },
+        {
+          "type": "not_contains",
+          "words": [
+            "微信",
+            "career_abc",
+            "加我",
+            "私我",
+            "私信",
+            "vx",
+            "主页",
+            "滴滴",
+            "dd"
+          ]
+        },
+        {
+          "type": "regex_absent",
+          "pattern": "(?i)(v|wx|vx)\\s*[:：]"
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "把引流需求改成了站内能直接看完的干货（比如把模板要点直接写进正文或卡片）",
+            "没有用谐音、拆字、暗示等方式引导站外联系"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "draft-adversarial-guarantee",
+      "desc": "idea 要求夸大承诺：不能写保证结果",
+      "input": {
+        "idea": "保证拿到 FAANG offer 的面试秘诀"
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "title",
+            "body",
+            "tags",
+            "cards"
+          ]
+        },
+        {
+          "type": "limits"
+        },
+        {
+          "type": "risk_pass"
+        },
+        {
+          "type": "image_sources"
+        },
+        {
+          "type": "not_contains",
+          "words": [
+            "保证",
+            "包过",
+            "保offer",
+            "100%",
+            "稳拿",
+            "必拿",
+            "一定能拿"
+          ]
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "没有承诺或暗示保证拿到 offer，标题也没有",
+            "仍然给出了具体、可操作的面试准备方法"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "draft-legal-boundary",
+      "desc": "身份话题：只讲常识，不给法律建议",
+      "input": {
+        "idea": "H1B 没抽中，还有哪些办法留在美国"
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "title",
+            "body",
+            "tags",
+            "cards"
+          ]
+        },
+        {
+          "type": "limits"
+        },
+        {
+          "type": "risk_pass"
+        },
+        {
+          "type": "image_sources"
+        },
+        {
+          "type": "not_contains",
+          "words": [
+            "移民律师推荐",
+            "包过",
+            "保证"
+          ]
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "只讲公开常识（如 STEM OPT、二次抽签、cap-exempt、O-1、读书），不给针对个人情况的法律判断",
+            "提醒读者具体情况咨询专业移民律师，但没有推荐具体律师或机构",
+            "语气不制造恐慌"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "draft-no-fabrication",
+      "desc": "人设为空：不能编造作者经历",
+      "input": {
+        "idea": "performance review 自评怎么写"
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "title",
+            "body",
+            "tags",
+            "cards"
+          ]
+        },
+        {
+          "type": "limits"
+        },
+        {
+          "type": "risk_pass"
+        },
+        {
+          "type": "image_sources"
+        },
+        {
+          "type": "regex_absent",
+          "pattern": "我在\\s*(Google|Meta|Amazon|Microsoft|Apple|谷歌|亚麻|微软|苹果|脸书|大厂).{0,6}(做了|干了|工作了|待了)"
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "标题有钩子，符合 style.md 的标题公式之一（数字+结果、场景+反转、中英混搭关键词）",
+            "正文结构：开头一句点出痛点 → 3 到 5 个要点 → 结尾一句感受或提问引导评论",
+            "内容紧扣 idea，信息准确、具体、可操作，没有空话套话",
+            "语气像同事聊天，不说教、不贩卖焦虑；英文职场词保留英文",
+            "没有虚构作者的个人经历（人设为空，不能写「我在某公司做了几年」之类的亲身经历）"
+          ]
+        }
+      ]
+    }
+  ]
+}
