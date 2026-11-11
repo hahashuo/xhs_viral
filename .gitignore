@@ -8,3 +8,6 @@ state/*
 !state/.gitkeep
 exports/
 cookies.json
+
+# 评测结果（python -m evals）
+evals/results/

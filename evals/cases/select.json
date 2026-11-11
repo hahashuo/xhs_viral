@@ -1,0 +1,556 @@
+{
+  "task": "并排比较多版初稿，指出各版硬伤，推荐最终方案（可以混合）",
+  "cases": [
+    {
+      "id": "select-contact-in-one",
+      "desc": "豆包版正文里有微信号，不能选它的正文",
+      "input": {
+        "idea": "behavioral 面试怎么准备",
+        "variants": [
+          {
+            "provider": "deepseek",
+            "title": "面了12家，总结behavioral套路",
+            "body": "behavioral 面试最怕讲成流水账。\n\n1️⃣ 用 STAR，但 Result 要有数字：延迟降了 40%，比「效果很好」有力得多。\n2️⃣ 准备 6 个故事覆盖冲突、失败、领导力、ambiguity，每个故事能换角度复用。\n3️⃣ 讲 I 不讲 we，面试官要听你做了什么。\n4️⃣ 最后留 30 秒讲你学到了什么。\n\n你最怕被问哪一题？评论区说说。",
+            "tags": [
+              "北美职场",
+              "面试技巧"
+            ],
+            "cards": [
+              {
+                "heading": "面了12家，总结be",
+                "lines": [
+                  "要点一",
+                  "要点二"
+                ]
+              }
+            ],
+            "photos": [],
+            "image_sources": [
+              {
+                "file": "card_01.png",
+                "source": "card"
+              }
+            ],
+            "ai_assisted": true
+          },
+          {
+            "provider": "doubao",
+            "title": "behavioral面试万能模板",
+            "body": "behavioral 面试最怕讲成流水账。\n\n1️⃣ 用 STAR，但 Result 要有数字：延迟降了 40%，比「效果很好」有力得多。\n2️⃣ 准备 6 个故事覆盖冲突、失败、领导力、ambiguity，每个故事能换角度复用。\n3️⃣ 讲 I 不讲 we，面试官要听你做了什么。\n4️⃣ 最后留 30 秒讲你学到了什么。\n\n完整题库整理好了，想要的加我 vx: career_abc 发你。",
+            "tags": [
+              "北美职场",
+              "面试技巧"
+            ],
+            "cards": [
+              {
+                "heading": "behavioral",
+                "lines": [
+                  "要点一",
+                  "要点二"
+                ]
+              }
+            ],
+            "photos": [],
+            "image_sources": [
+              {
+                "file": "card_01.png",
+                "source": "card"
+              }
+            ],
+            "ai_assisted": true
+          },
+          {
+            "provider": "claude",
+            "title": "behavioral别再讲流水账了",
+            "body": "behavioral 面试最怕讲成流水账。\n\n1️⃣ 结构用 STAR，但 Result 要有数字：延迟降了 40%，比「效果很好」有力得多。\n2️⃣ 准备 6 个故事覆盖冲突、失败、领导力、ambiguity，每个故事能换角度复用。\n3️⃣ 讲 I 不讲 we，面试官要听你做了什么。\n4️⃣ 最后留 30 秒讲你学到了什么。\n\n你最怕被问哪一题？评论区说说。",
+            "tags": [
+              "北美职场",
+              "面试技巧"
+            ],
+            "cards": [
+              {
+                "heading": "behavioral",
+                "lines": [
+                  "要点一",
+                  "要点二"
+                ]
+              }
+            ],
+            "photos": [],
+            "image_sources": [
+              {
+                "file": "card_01.png",
+                "source": "card"
+              }
+            ],
+            "ai_assisted": true
+          }
+        ]
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "per_variant",
+            "recommendation.title",
+            "recommendation.body_from",
+            "reason"
+          ]
+        },
+        {
+          "type": "length_range",
+          "field": "recommendation.title",
+          "min": 1,
+          "max": 20
+        },
+        {
+          "type": "flags_problem",
+          "provider": "doubao",
+          "keywords": [
+            "引流",
+            "vx",
+            "微信",
+            "联系方式",
+            "站外"
+          ]
+        },
+        {
+          "type": "not_in_set",
+          "path": "recommendation.body_from",
+          "values": [
+            "doubao"
+          ]
+        },
+        {
+          "type": "not_contains",
+          "field": "recommendation.title",
+          "words": [
+            "vx",
+            "微信"
+          ]
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "每版的问题指得具体、准确，没有遗漏硬伤也没有挑无关紧要的刺",
+            "推荐方案可以直接落地，混合时说清楚各取哪部分",
+            "理由一句话说清楚为什么"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "select-long-title-best-body",
+      "desc": "Claude 版正文最好但标题 27 字；推荐标题必须 ≤20 字",
+      "input": {
+        "idea": "behavioral 面试怎么准备",
+        "variants": [
+          {
+            "provider": "deepseek",
+            "title": "behavioral面试3个技巧",
+            "body": "behavioral 面试要用 STAR 法。多准备几个故事。讲清楚自己的贡献。祝大家顺利！",
+            "tags": [
+              "北美职场",
+              "面试技巧"
+            ],
+            "cards": [
+              {
+                "heading": "behavioral",
+                "lines": [
+                  "要点一",
+                  "要点二"
+                ]
+              }
+            ],
+            "photos": [],
+            "image_sources": [
+              {
+                "file": "card_01.png",
+                "source": "card"
+              }
+            ],
+            "ai_assisted": true
+          },
+          {
+            "provider": "claude",
+            "title": "面了整整12家公司之后我终于总结出behavioral面试的5个通用套路",
+            "body": "behavioral 面试最怕讲成流水账。\n\n1️⃣ 用 STAR，但 Result 要有数字：延迟降了 40%，比「效果很好」有力得多。\n2️⃣ 准备 6 个故事覆盖冲突、失败、领导力、ambiguity，每个故事能换角度复用。\n3️⃣ 讲 I 不讲 we，面试官要听你做了什么。\n4️⃣ 最后留 30 秒讲你学到了什么。\n\n你最怕被问哪一题？评论区说说。",
+            "tags": [
+              "北美职场",
+              "面试技巧"
+            ],
+            "cards": [
+              {
+                "heading": "面了整整12家公司之",
+                "lines": [
+                  "要点一",
+                  "要点二"
+                ]
+              }
+            ],
+            "photos": [],
+            "image_sources": [
+              {
+                "file": "card_01.png",
+                "source": "card"
+              }
+            ],
+            "ai_assisted": true
+          }
+        ]
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "per_variant",
+            "recommendation.title",
+            "recommendation.body_from",
+            "reason"
+          ]
+        },
+        {
+          "type": "length_range",
+          "field": "recommendation.title",
+          "min": 1,
+          "max": 20
+        },
+        {
+          "type": "flags_problem",
+          "provider": "claude",
+          "keywords": [
+            "标题",
+            "字",
+            "长",
+            "20"
+          ]
+        },
+        {
+          "type": "equals",
+          "path": "recommendation.body_from",
+          "value": "claude"
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "每版的问题指得具体、准确，没有遗漏硬伤也没有挑无关紧要的刺",
+            "推荐方案可以直接落地，混合时说清楚各取哪部分",
+            "理由一句话说清楚为什么"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "select-fabricated-experience",
+      "desc": "DeepSeek 版编造了作者在 Meta 当面试官的经历，人设为空",
+      "input": {
+        "idea": "behavioral 面试怎么准备",
+        "variants": [
+          {
+            "provider": "deepseek",
+            "title": "前Meta面试官教你behavioral",
+            "body": "我在 Meta 当了 8 年 hiring manager，面过 500 多个候选人。\n\nbehavioral 面试最怕讲成流水账。\n\n1️⃣ 用 STAR，但 Result 要有数字：延迟降了 40%，比「效果很好」有力得多。\n2️⃣ 准备 6 个故事覆盖冲突、失败、领导力、ambiguity，每个故事能换角度复用。\n3️⃣ 讲 I 不讲 we，面试官要听你做了什么。\n4️⃣ 最后留 30 秒讲你学到了什么。\n\n你最怕被问哪一题？评论区说说。",
+            "tags": [
+              "北美职场",
+              "面试技巧"
+            ],
+            "cards": [
+              {
+                "heading": "前Meta面试官教你",
+                "lines": [
+                  "要点一",
+                  "要点二"
+                ]
+              }
+            ],
+            "photos": [],
+            "image_sources": [
+              {
+                "file": "card_01.png",
+                "source": "card"
+              }
+            ],
+            "ai_assisted": true
+          },
+          {
+            "provider": "doubao",
+            "title": "behavioral别再讲流水账了",
+            "body": "behavioral 面试最怕讲成流水账。\n\n1️⃣ 用 STAR，但 Result 要有数字：延迟降了 40%，比「效果很好」有力得多。\n2️⃣ 准备 6 个故事覆盖冲突、失败、领导力、ambiguity，每个故事能换角度复用。\n3️⃣ 讲 I 不讲 we，面试官要听你做了什么。\n4️⃣ 最后留 30 秒讲你学到了什么。\n\n你最怕被问哪一题？评论区说说。",
+            "tags": [
+              "北美职场",
+              "面试技巧"
+            ],
+            "cards": [
+              {
+                "heading": "behavioral",
+                "lines": [
+                  "要点一",
+                  "要点二"
+                ]
+              }
+            ],
+            "photos": [],
+            "image_sources": [
+              {
+                "file": "card_01.png",
+                "source": "card"
+              }
+            ],
+            "ai_assisted": true
+          }
+        ]
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "per_variant",
+            "recommendation.title",
+            "recommendation.body_from",
+            "reason"
+          ]
+        },
+        {
+          "type": "length_range",
+          "field": "recommendation.title",
+          "min": 1,
+          "max": 20
+        },
+        {
+          "type": "flags_problem",
+          "provider": "deepseek",
+          "keywords": [
+            "虚构",
+            "经历",
+            "人设",
+            "编造",
+            "不实",
+            "真实"
+          ]
+        },
+        {
+          "type": "not_in_set",
+          "path": "recommendation.body_from",
+          "values": [
+            "deepseek"
+          ]
+        },
+        {
+          "type": "not_in_set",
+          "path": "recommendation.title_from",
+          "values": [
+            "deepseek"
+          ]
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "每版的问题指得具体、准确，没有遗漏硬伤也没有挑无关紧要的刺",
+            "推荐方案可以直接落地，混合时说清楚各取哪部分",
+            "理由一句话说清楚为什么"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "select-failed-variant",
+      "desc": "豆包调用失败，只能在剩下的里选",
+      "input": {
+        "idea": "behavioral 面试怎么准备",
+        "variants": [
+          {
+            "provider": "doubao",
+            "error": "未配置：在 .env 里填写 DOUBAO_API_KEY 和 DOUBAO_MODEL"
+          },
+          {
+            "provider": "deepseek",
+            "title": "behavioral别再讲流水账了",
+            "body": "behavioral 面试最怕讲成流水账。\n\n1️⃣ 用 STAR，但 Result 要有数字：延迟降了 40%，比「效果很好」有力得多。\n2️⃣ 准备 6 个故事覆盖冲突、失败、领导力、ambiguity，每个故事能换角度复用。\n3️⃣ 讲 I 不讲 we，面试官要听你做了什么。\n4️⃣ 最后留 30 秒讲你学到了什么。\n\n你最怕被问哪一题？评论区说说。",
+            "tags": [
+              "北美职场",
+              "面试技巧"
+            ],
+            "cards": [
+              {
+                "heading": "behavioral",
+                "lines": [
+                  "要点一",
+                  "要点二"
+                ]
+              }
+            ],
+            "photos": [],
+            "image_sources": [
+              {
+                "file": "card_01.png",
+                "source": "card"
+              }
+            ],
+            "ai_assisted": true
+          },
+          {
+            "provider": "claude",
+            "title": "面了12家，总结behavioral套路",
+            "body": "behavioral 面试最怕讲成流水账。\n\n1️⃣ 用 STAR，但 Result 要有数字：延迟降了 40%，比「效果很好」有力得多。\n2️⃣ 准备 6 个故事覆盖冲突、失败、领导力、ambiguity，每个故事能换角度复用。\n3️⃣ 讲 I 不讲 we，面试官要听你做了什么。\n\n你最怕被问哪一题？评论区说说。",
+            "tags": [
+              "北美职场",
+              "面试技巧"
+            ],
+            "cards": [
+              {
+                "heading": "面了12家，总结be",
+                "lines": [
+                  "要点一",
+                  "要点二"
+                ]
+              }
+            ],
+            "photos": [],
+            "image_sources": [
+              {
+                "file": "card_01.png",
+                "source": "card"
+              }
+            ],
+            "ai_assisted": true
+          }
+        ]
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "per_variant",
+            "recommendation.title",
+            "recommendation.body_from",
+            "reason"
+          ]
+        },
+        {
+          "type": "length_range",
+          "field": "recommendation.title",
+          "min": 1,
+          "max": 20
+        },
+        {
+          "type": "not_in_set",
+          "path": "recommendation.body_from",
+          "values": [
+            "doubao"
+          ]
+        },
+        {
+          "type": "not_in_set",
+          "path": "recommendation.title_from",
+          "values": [
+            "doubao"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "select-off-topic",
+      "desc": "豆包版跑题（idea 是 OPT 求职时间线，它写了 H1B 抽签）",
+      "input": {
+        "idea": "OPT 期间找工作的时间线怎么排",
+        "variants": [
+          {
+            "provider": "deepseek",
+            "title": "OPT求职时间线，照着排",
+            "body": "OPT 一共 12 个月，失业天数上限 90 天，节奏比努力更重要。\n\n1️⃣ 毕业前 3 个月：递 OPT 申请，开始海投。\n2️⃣ EAD 到手前：刷题 + 内推，把面试排在 start date 之后。\n3️⃣ 失业天数过半：放宽到 contract 和小公司，先保住身份。\n4️⃣ 拿到 offer：确认雇主能 E-Verify，为 STEM OPT 做准备。\n\n你现在在哪个阶段？",
+            "tags": [
+              "OPT",
+              "北美求职"
+            ],
+            "cards": [
+              {
+                "heading": "OPT求职时间线，照",
+                "lines": [
+                  "要点一",
+                  "要点二"
+                ]
+              }
+            ],
+            "photos": [],
+            "image_sources": [
+              {
+                "file": "card_01.png",
+                "source": "card"
+              }
+            ],
+            "ai_assisted": true
+          },
+          {
+            "provider": "doubao",
+            "title": "H1B抽签必看攻略",
+            "body": "每年 3 月 H1B 注册，中签率逐年下降。\n\n1️⃣ 了解 master cap。\n2️⃣ 找愿意 sponsor 的公司。\n3️⃣ 没中可以考虑 cap-exempt 雇主。\n\n祝大家都中签！",
+            "tags": [
+              "H1B"
+            ],
+            "cards": [
+              {
+                "heading": "H1B抽签必看攻略",
+                "lines": [
+                  "要点一",
+                  "要点二"
+                ]
+              }
+            ],
+            "photos": [],
+            "image_sources": [
+              {
+                "file": "card_01.png",
+                "source": "card"
+              }
+            ],
+            "ai_assisted": true
+          }
+        ]
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "per_variant",
+            "recommendation.title",
+            "recommendation.body_from",
+            "reason"
+          ]
+        },
+        {
+          "type": "length_range",
+          "field": "recommendation.title",
+          "min": 1,
+          "max": 20
+        },
+        {
+          "type": "flags_problem",
+          "provider": "doubao",
+          "keywords": [
+            "跑题",
+            "偏离",
+            "不符",
+            "OPT",
+            "主题",
+            "idea",
+            "H1B"
+          ]
+        },
+        {
+          "type": "not_in_set",
+          "path": "recommendation.body_from",
+          "values": [
+            "doubao"
+          ]
+        },
+        {
+          "type": "not_in_set",
+          "path": "recommendation.title_from",
+          "values": [
+            "doubao"
+          ]
+        }
+      ]
+    }
+  ]
+}

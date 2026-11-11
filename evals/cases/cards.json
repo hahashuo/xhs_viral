@@ -1,0 +1,216 @@
+{
+  "task": "为定稿设计文字卡片（第一张是封面）和拍摄建议，并登记图片来源",
+  "cases": [
+    {
+      "id": "cards-layoff",
+      "desc": "3 个要点的常规笔记",
+      "input": {
+        "title": "被裁第二天我做对了3件事",
+        "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。",
+        "tags": [
+          "北美职场",
+          "裁员",
+          "职场干货"
+        ]
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "cards",
+            "image_sources"
+          ]
+        },
+        {
+          "type": "cards_count",
+          "min": 2,
+          "max": 8
+        },
+        {
+          "type": "cards_fit"
+        },
+        {
+          "type": "image_sources"
+        },
+        {
+          "type": "risk_pass"
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "卡片内容忠实于正文，没有新增正文里没有的事实、数字或承诺",
+            "第一张是封面，标题抓眼球，和笔记标题一致或呼应",
+            "每条要点短、可扫读，一张卡只讲一件事",
+            "拍摄建议（如有）具体可执行：构图、道具、光线、文字位置；不建议直接用网图，不涉及公司内部画面或他人隐私"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cards-long-list",
+      "desc": "8 个要点：要拆成多张卡，每张都放得下",
+      "input": {
+        "title": "谈薪8步，照着走不会谈崩",
+        "body": "offer 谈薪不是砍价，是交换信息。按这 8 步走，基本不会谈崩。\n\n1️⃣ 先别报数，让 recruiter 先给 range。\n2️⃣ 拿到书面 offer 再谈，口头的不算。\n3️⃣ 拆开看：base、bonus、RSU、sign-on 分别谈。\n4️⃣ base 空间小，RSU 和 sign-on 空间大。\n5️⃣ 用 competing offer，但只说事实不虚张声势。\n6️⃣ 问清 RSU 的 vesting schedule 和 refresher。\n7️⃣ 搬家费、入职日期、remote 天数也能谈。\n8️⃣ 谈完让对方发更新后的书面 offer。\n\n你谈薪时踩过什么坑？",
+        "tags": [
+          "谈薪",
+          "北美职场"
+        ]
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "cards",
+            "image_sources"
+          ]
+        },
+        {
+          "type": "cards_count",
+          "min": 2,
+          "max": 8
+        },
+        {
+          "type": "cards_fit"
+        },
+        {
+          "type": "image_sources"
+        },
+        {
+          "type": "risk_pass"
+        },
+        {
+          "type": "cards_count",
+          "min": 3,
+          "max": 8
+        },
+        {
+          "type": "contains_any",
+          "field": "cards",
+          "words": [
+            "RSU"
+          ]
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "卡片内容忠实于正文，没有新增正文里没有的事实、数字或承诺",
+            "第一张是封面，标题抓眼球，和笔记标题一致或呼应",
+            "每条要点短、可扫读，一张卡只讲一件事",
+            "拍摄建议（如有）具体可执行：构图、道具、光线、文字位置；不建议直接用网图，不涉及公司内部画面或他人隐私"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cards-no-new-facts",
+      "desc": "正文没有数字，卡片不能自己编数字",
+      "input": {
+        "title": "和美国老板1:1怎么聊",
+        "body": "1:1 不是汇报会，是你争取资源的时间。\n\n1️⃣ 自己准备 agenda，提前一天发过去。\n2️⃣ 先讲 blocker，再讲进展。\n3️⃣ 每个月至少聊一次 career growth。\n4️⃣ 会后发一条 recap，留下记录。\n\n你的 1:1 一般聊什么？",
+        "tags": [
+          "北美职场"
+        ]
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "cards",
+            "image_sources"
+          ]
+        },
+        {
+          "type": "cards_count",
+          "min": 2,
+          "max": 8
+        },
+        {
+          "type": "cards_fit"
+        },
+        {
+          "type": "image_sources"
+        },
+        {
+          "type": "risk_pass"
+        },
+        {
+          "type": "regex_absent",
+          "field": "cards",
+          "pattern": "\\d+\\s*%|\\d+\\s*(倍|小时|分钟|天)"
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "卡片内容忠实于正文，没有新增正文里没有的事实、数字或承诺",
+            "第一张是封面，标题抓眼球，和笔记标题一致或呼应",
+            "每条要点短、可扫读，一张卡只讲一件事",
+            "拍摄建议（如有）具体可执行：构图、道具、光线、文字位置；不建议直接用网图，不涉及公司内部画面或他人隐私"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cards-office-photo",
+      "desc": "办公室题材：拍摄建议不能拍公司内部屏幕、工牌或同事",
+      "input": {
+        "title": "回办公室第一周的5个小习惯",
+        "body": "RTO 之后，最难的是重新建立节奏。\n\n1️⃣ 提前 15 分钟到，先把当天 3 件事写在便利贴上。\n2️⃣ 午饭约一个不熟的同事。\n3️⃣ 会议室提前订好，别站着找地方。\n4️⃣ 带一个保温杯，少跑几趟茶水间。\n5️⃣ 下班前 10 分钟收桌面。\n\n你们公司一周回几天？",
+        "tags": [
+          "北美职场",
+          "美国工作"
+        ]
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "cards",
+            "image_sources"
+          ]
+        },
+        {
+          "type": "cards_count",
+          "min": 2,
+          "max": 8
+        },
+        {
+          "type": "cards_fit"
+        },
+        {
+          "type": "image_sources"
+        },
+        {
+          "type": "risk_pass"
+        },
+        {
+          "type": "json_fields",
+          "fields": [
+            "photos"
+          ]
+        },
+        {
+          "type": "not_contains",
+          "field": "photos",
+          "words": [
+            "工牌",
+            "badge",
+            "公司 logo",
+            "公司logo",
+            "电脑屏幕上的内部",
+            "同事的脸"
+          ]
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "卡片内容忠实于正文，没有新增正文里没有的事实、数字或承诺",
+            "第一张是封面，标题抓眼球，和笔记标题一致或呼应",
+            "每条要点短、可扫读，一张卡只讲一件事",
+            "拍摄建议（如有）具体可执行：构图、道具、光线、文字位置；不建议直接用网图，不涉及公司内部画面或他人隐私"
+          ]
+        }
+      ]
+    }
+  ]
+}

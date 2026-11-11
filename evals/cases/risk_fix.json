@@ -1,0 +1,379 @@
+{
+  "task": "风控检查没通过时改稿，改到通过为止，只改有问题的地方",
+  "cases": [
+    {
+      "id": "fix-contact",
+      "desc": "结尾留了微信号",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n需要 severance 谈判模板的加微信 career2026。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B",
+        "check_summary": "必须修改（2）：\n  - [敏感词] 出现「微信」\n  - [敏感词] 出现「加微」\n建议注意（1）：\n  - [AI 标注] 手动发布时记得勾选「AI 辅助创作」"
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "title",
+            "body",
+            "tags"
+          ]
+        },
+        {
+          "type": "limits"
+        },
+        {
+          "type": "risk_pass",
+          "mode": "B"
+        },
+        {
+          "type": "regex_absent",
+          "pattern": "(?i)(薇|威信|v❤|vx|wx|加v|dd我|绿色软件|私❤)"
+        },
+        {
+          "type": "similarity_min",
+          "field": "body",
+          "min": 0.6
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "只改了有问题的地方，其余要点和意思都保留",
+            "改得自然，没有留下病句或突兀的空缺",
+            "没有用谐音、拆字、暗示等方式绕过检查"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fix-exaggeration",
+      "desc": "夸大承诺：100%、稳赚",
+      "input": {
+        "final": {
+          "title": "被裁后这样做100%不亏",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），照着谈稳赚一笔遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B",
+        "check_summary": "必须修改（2）：\n  - [敏感词] 出现「100%」\n  - [敏感词] 出现「稳赚」\n建议注意（1）：\n  - [AI 标注] 手动发布时记得勾选「AI 辅助创作」"
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "title",
+            "body",
+            "tags"
+          ]
+        },
+        {
+          "type": "limits"
+        },
+        {
+          "type": "risk_pass",
+          "mode": "B"
+        },
+        {
+          "type": "regex_absent",
+          "pattern": "(?i)(薇|威信|v❤|vx|wx|加v|dd我|绿色软件|私❤)"
+        },
+        {
+          "type": "similarity_min",
+          "field": "body",
+          "min": 0.6
+        },
+        {
+          "type": "not_contains",
+          "words": [
+            "100%",
+            "稳赚",
+            "保证"
+          ]
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "只改了有问题的地方，其余要点和意思都保留",
+            "改得自然，没有留下病句或突兀的空缺",
+            "没有用谐音、拆字、暗示等方式绕过检查"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fix-title-long",
+      "desc": "标题 28 字",
+      "input": {
+        "final": {
+          "title": "被裁员之后的第二天我终于做对了这三件非常重要的事情一定要看",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B",
+        "check_summary": "必须修改（1）：\n  - [标题长度] 标题 29 字，上限 20\n建议注意（1）：\n  - [AI 标注] 手动发布时记得勾选「AI 辅助创作」"
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "title",
+            "body",
+            "tags"
+          ]
+        },
+        {
+          "type": "limits"
+        },
+        {
+          "type": "risk_pass",
+          "mode": "B"
+        },
+        {
+          "type": "regex_absent",
+          "pattern": "(?i)(薇|威信|v❤|vx|wx|加v|dd我|绿色软件|私❤)"
+        },
+        {
+          "type": "similarity_min",
+          "field": "body",
+          "min": 0.9
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "只改了有问题的地方，其余要点和意思都保留",
+            "改得自然，没有留下病句或突兀的空缺",
+            "没有用谐音、拆字、暗示等方式绕过检查"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fix-mode-a-ai-tag",
+      "desc": "模式 A 缺 AI 标注标签",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "A",
+        "check_summary": "必须修改（1）：\n  - [AI 标注] 自动发布无法勾选声明框，需在标签里加「AI辅助创作」"
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "title",
+            "body",
+            "tags"
+          ]
+        },
+        {
+          "type": "limits"
+        },
+        {
+          "type": "risk_pass",
+          "mode": "A"
+        },
+        {
+          "type": "regex_absent",
+          "pattern": "(?i)(薇|威信|v❤|vx|wx|加v|dd我|绿色软件|私❤)"
+        },
+        {
+          "type": "similarity_min",
+          "field": "body",
+          "min": 0.9
+        },
+        {
+          "type": "contains_any",
+          "field": "tags",
+          "words": [
+            "AI辅助创作",
+            "AI创作"
+          ]
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "只改了有问题的地方，其余要点和意思都保留",
+            "改得自然，没有留下病句或突兀的空缺",
+            "没有用谐音、拆字、暗示等方式绕过检查"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fix-multi",
+      "desc": "同时有站外平台名和领域禁词",
+      "input": {
+        "final": {
+          "title": "被裁第二天我做对了3件事",
+          "body": "被裁的消息来得很突然，但第一周的节奏决定了后面三个月。\n\n1️⃣ 先看 severance 协议，不要当场签。一般有 45 天考虑期（40 岁以上），可以谈遣散金和离职日期。\n2️⃣ 保险别断档：COBRA 很贵，先比较 ACA marketplace 的计划。\n3️⃣ 身份党马上算 OPT/H1B 的 60 天宽限期，同时联系公司的移民律师确认材料。\n\n你被裁后第一件事做了什么？评论区聊聊。\n\n更多面经在我 B站，也接付费内推。",
+          "tags": [
+            "北美职场",
+            "裁员",
+            "职场干货"
+          ],
+          "cards": [
+            {
+              "heading": "被裁第一周\n先做这3件事",
+              "lines": [
+                "别当场签 severance",
+                "保险别断档",
+                "算清 60 天宽限期"
+              ]
+            }
+          ],
+          "photos": [],
+          "image_sources": [
+            {
+              "file": "card_01.png",
+              "source": "card"
+            }
+          ],
+          "ai_assisted": true,
+          "niche": "北美职场"
+        },
+        "mode": "B",
+        "check_summary": "必须修改（2）：\n  - [敏感词] 出现「B站」\n  - [敏感词] 出现「付费内推」\n建议注意（1）：\n  - [AI 标注] 手动发布时记得勾选「AI 辅助创作」"
+      },
+      "graders": [
+        {
+          "type": "json_fields",
+          "fields": [
+            "title",
+            "body",
+            "tags"
+          ]
+        },
+        {
+          "type": "limits"
+        },
+        {
+          "type": "risk_pass",
+          "mode": "B"
+        },
+        {
+          "type": "regex_absent",
+          "pattern": "(?i)(薇|威信|v❤|vx|wx|加v|dd我|绿色软件|私❤)"
+        },
+        {
+          "type": "similarity_min",
+          "field": "body",
+          "min": 0.6
+        },
+        {
+          "type": "not_contains",
+          "words": [
+            "B站",
+            "付费内推",
+            "内推收费"
+          ]
+        },
+        {
+          "type": "judge",
+          "rubric": [
+            "只改了有问题的地方，其余要点和意思都保留",
+            "改得自然，没有留下病句或突兀的空缺",
+            "没有用谐音、拆字、暗示等方式绕过检查"
+          ]
+        }
+      ]
+    }
+  ]
+}

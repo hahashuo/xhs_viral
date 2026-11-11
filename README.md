@@ -44,6 +44,7 @@
 | `/new-niche <领域>` | 新建领域 |
 | `/persona <信息>` | 更新人设 |
 | `/mode A\|B` | 切换发布模式 |
+| `/eval [step]` | 跑 agent 能力评测 |
 
 例子：`/idea 被裁员后第一周应该做的事`
 
@@ -74,6 +75,10 @@ python -m unittest discover -s tests -t . -v
 
   会各调用 DeepSeek 和豆包一次，产生少量费用。
 - GitHub Actions 会在 Ubuntu 和 Windows 上自动跑单元测试。
+
+### agent 能力评测
+
+单元测试检查代码；`python -m evals` 检查 agent 在每一步（初稿、挑选、卡片、风控、发布决策）做得好不好。风控引擎那组不需要 key：`python -m evals --step risk_engine`。其余需要在 `.env` 填 `ANTHROPIC_API_KEY`（或用 `--agent deepseek`）。详见 [evals/README.md](evals/README.md)，Claude Code 里可以用 `/eval`。
 
 ## 目录
 
